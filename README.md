@@ -75,7 +75,7 @@ This project facilitates Discord notifications for commits containing the specia
 ## Example:
 
 <div align=center>
-<img src="https://imgur.com/3gAuchu.png" alt="IMG">
+<img src="https://i.imgur.com/m4emAgB.png" alt="IMG">
 </div>
 
 The script is triggered by a GitHub Action workflow on push events. It fetches commit information from the GitHub API, analyzes commit messages for specific keywords (such as `@doc` or similar), and sends relevant commit details as a Discord notification using a webhook.
