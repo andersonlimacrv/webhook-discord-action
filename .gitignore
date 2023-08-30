@@ -45,4 +45,4 @@ env.bak/
 venv.bak/
 
 # text-files
-*.txt
+*credentials.txt
