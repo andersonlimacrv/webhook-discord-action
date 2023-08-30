@@ -35,18 +35,18 @@ This project facilitates Discord notifications for commits containing the specia
          Go to GitHub and log in to your account.
       
       2. **Access Token Settings:**
-         In the top-right corner of the page, click on your profile picture and select "Settings".
+         In the top-right corner of the page, click on your profile picture and select `Settings`.
       
       3. **Go to Access Token Section:**
-         In the left sidebar, scroll down to the "Developer settings" section and click on "Personal access tokens".
+         In the left sidebar, scroll down to the `Developer settings` section and click on `Personal access tokens`.
       
       4. **Generate a New Token:**
-         Click on the "Generate new token" button.
+         Click on the `Generate new token` button.
       
       5. **Configure Token Options:**
          - Give the token a descriptive name so you can identify its purpose.
          - Select the necessary permissions. For your case, you'll likely need read permissions related to repositories.
-         - Once you've selected the permissions, scroll to the bottom and click "Generate token".
+         - Once you've selected the permissions, scroll to the bottom and click `Generate token`.
       
       6. **Copy the Token:**
          GitHub will generate the token. Make sure to copy the generated token immediately as it will be displayed only once. If you lose the token, you'll need to create a new one.
