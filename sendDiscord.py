@@ -28,7 +28,7 @@ def main():
     # Define project and webhook information
     url_discord = credentials.get("url_discord")
     project = credentials.get("project")
-    url_project = credentials.get("url_project")
+    #url_project = credentials.get("url_project")
     url_icon = credentials.get("url_icon")
     title_embed = credentials.get("title_embed")
     description = credentials.get("description")
@@ -40,11 +40,13 @@ def main():
     commit_info = get_commit_info(github_repo, github_token)
     if not commit_info:
         return
-
     # Extract relevant information from the commit
     commit_message = commit_info["commit"]["message"]
     commit_author = commit_info["commit"]["author"]["name"]
     commit_date = commit_info["commit"]["author"]["date"]
+    commit_sha = commit_info["sha"]
+    commit_url = commit_info["html_url"]
+    commit_autor = commit_info["author"]["avatar_url"]
 
     # Check if keywords are present in the commit message
     keywords = ["@doc", "@documentação", "@documentation"]
@@ -55,6 +57,7 @@ def main():
     title_embed = title_embed.encode("latin-1").decode("utf-8")
     commit_message = commit_message.encode("latin-1").decode("utf-8")
     commit_author = commit_author.encode("latin-1").decode("utf-8")
+    #commit_sha = commit_sha[:7]
 
     # Create the embed with the commit information
     webhook = DiscordWebhook(url=url_discord, username="Commit Documentation")
@@ -62,13 +65,19 @@ def main():
         title=title_embed, description=description, color="00ACAC"
     )
     embed.set_author(
-        name=project,
-        url=url_project,
-        icon_url=url_icon,
+        name=commit_sha,
+        url=commit_url,
+        icon_url=commit_autor,
     )
-    embed.add_embed_field(name="Autor do Commit", value=commit_author, inline=False)
+
+    embed.add_embed_field(name="Projeto", value=project, inline= True)
+    embed.add_embed_field(name="Autor do Commit", value=commit_author, inline= True)
     embed.add_embed_field(name="Mensagem do Commit", value=commit_message, inline=False)
     embed.add_embed_field(name="Data do Commit", value=commit_date, inline=False)
+    embed.set_footer(text="Computational Energy Saving Solutions", icon_url=url_icon)
+    
+    # set timestamp (default is now) accepted types are int, float and datetime
+    embed.set_timestamp()
 
     webhook.add_embed(embed)
     response = webhook.execute()
