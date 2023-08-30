@@ -4,7 +4,7 @@
 <img src="https://imgur.com/IOtkCuf.png" width="250" height="150" alt="IMG">
 </div>
 
-This project facilitates Discord notifications for commits containing the tag `#doc`.
+This project facilitates Discord notifications for commits containing the special tags like `@documentation` or `@doc` like in my case.
 
 ## Setup
 
@@ -29,6 +29,32 @@ This project facilitates Discord notifications for commits containing the tag `#
       ```
 
 4. Execute the script manually or use GitHub Actions to automate the process like `actions.yml` file.
+5. # Configure your github_token:
+      
+      1. **Log in to Your GitHub Account:**
+         Go to GitHub and log in to your account.
+      
+      2. **Access Token Settings:**
+         In the top-right corner of the page, click on your profile picture and select "Settings".
+      
+      3. **Go to Access Token Section:**
+         In the left sidebar, scroll down to the "Developer settings" section and click on "Personal access tokens".
+      
+      4. **Generate a New Token:**
+         Click on the "Generate new token" button.
+      
+      5. **Configure Token Options:**
+         - Give the token a descriptive name so you can identify its purpose.
+         - Select the necessary permissions. For your case, you'll likely need read permissions related to repositories.
+         - Once you've selected the permissions, scroll to the bottom and click "Generate token".
+      
+      6. **Copy the Token:**
+         GitHub will generate the token. Make sure to copy the generated token immediately as it will be displayed only once. If you lose the token, you'll need to create a new one.
+      
+      7. **Paste the Token in Your Project:**
+         In the file where you're using the token (probably the `sendDiscord.py` file in this case), replace the value of `github_token` with the token you just generated.
+      
+      Remember that personal access tokens are sensitive and should be handled carefully. Do not share your tokens publicly or store them in insecure locations.
 
 ## Usage
 
