@@ -58,7 +58,7 @@ This project facilitates Discord notifications for commits containing the specia
 
 ## Usage
 
-1. When committing, include the message "#doc" to trigger the Discord notification.
+1. When committing, include the message `@doc` to trigger the Discord notification.
 2. The action will automatically execute when a push is made to the main branch.
    Obs: Maybe you want to change the keyword for commits filtering.
         
