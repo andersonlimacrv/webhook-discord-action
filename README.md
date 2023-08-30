@@ -1,7 +1,7 @@
 # Webhook Discord Push Action
 
 <div align=center>
-<img src="https://imgur.com/IOtkCuf.png" width="250" height="150" alt="IMG">
+<img src="https://imgur.com/IOtkCuf.png" width="250" height="150" alt="Imagem.">
 </div>
 
 This project facilitates Discord notifications for commits containing the special tags like `@documentation` or `@doc` like in my case.
@@ -30,30 +30,29 @@ This project facilitates Discord notifications for commits containing the specia
 
 4. Execute the script manually or use GitHub Actions to automate the process like `actions.yml` file.
 5. # Configure your github_token:
-      
       1. **Log in to Your GitHub Account:**
          Go to GitHub and log in to your account.
-      
+
       2. **Access Token Settings:**
          In the top-right corner of the page, click on your profile picture and select `Settings`.
-      
+
       3. **Go to Access Token Section:**
          In the left sidebar, scroll down to the `Developer settings` section and click on `Personal access tokens`.
-      
+
       4. **Generate a New Token:**
          Click on the `Generate new token` button.
-      
+
       5. **Configure Token Options:**
-         - Give the token a descriptive name so you can identify its purpose.
-         - Select the necessary permissions. For your case, you'll likely need read permissions related to repositories.
-         - Once you've selected the permissions, scroll to the bottom and click `Generate token`.
-      
+
+            - Give the token a descriptive name so you can identify its purpose.
+            - Select the necessary permissions. For your case, you'll likely need read permissions related to repositories.
+            - Once you've selected the permissions, scroll to the bottom and click `Generate token`.
+
       6. **Copy the Token:**
          GitHub will generate the token. Make sure to copy the generated token immediately as it will be displayed only once. If you lose the token, you'll need to create a new one.
-      
+
       7. **Paste the Token in Your Project:**
          In the file where you're using the token (probably the `sendDiscord.py` file in this case), replace the value of `github_token` with the token you just generated.
-      
       Remember that personal access tokens are sensitive and should be handled carefully. Do not share your tokens publicly or store them in insecure locations.
 
 ## Usage
@@ -61,8 +60,9 @@ This project facilitates Discord notifications for commits containing the specia
 1. When committing, include the message `@doc` to trigger the Discord notification.
 2. The action will automatically execute when a push is made to the main branch.
    Obs: Maybe you want to change the keyword for commits filtering.
-        
+
 ## Code Overview
+
 - [x] Identifying the `credentials.txt` file
 - [x] Define project and webhook information
 - [x] Make the HTTP request to get the last commit information from the main branch
@@ -73,11 +73,10 @@ This project facilitates Discord notifications for commits containing the specia
 - [x] Send message for Discord channel
 
 ## Example:
+
 <div align=center>
 <img src="https://imgur.com/bQi4dmL.png" alt="IMG">
 </div>
-
-
 
 The script is triggered by a GitHub Action workflow on push events. It fetches commit information from the GitHub API, analyzes commit messages for specific keywords (such as `@doc` or similar), and sends relevant commit details as a Discord notification using a webhook.
 
