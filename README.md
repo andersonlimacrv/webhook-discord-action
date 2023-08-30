@@ -1,6 +1,6 @@
 # Webhook Discord Push Action
 
-This is a project that sends Discord notifications for commits containing "#doc".
+This is a project that sends Discord notifications for commits containing `#doc`.
 
 ## Setup
 
