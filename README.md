@@ -1,6 +1,8 @@
 # Webhook Discord Push Action
 
-![Project Logo](https://imgur.com/IOtkCuf.png)
+<div align=center>
+<img src="https://imgur.com/IOtkCuf.png" width="250" height="150" alt="IMG">
+</div>
 
 This project facilitates Discord notifications for commits containing the tag `#doc`.
 
@@ -33,21 +35,23 @@ This project facilitates Discord notifications for commits containing the tag `#
 1. When committing, include the message "#doc" to trigger the Discord notification.
 2. The action will automatically execute when a push is made to the main branch.
    Obs: Maybe you want to change the keyword for commits filtering.
-
+        
 ## Code Overview
+- [x] Identifying the `credentials.txt` file
+- [x] Define project and webhook information
+- [x] Make the HTTP request to get the last commit information from the main branch
+- [x] Extract relevant information from the commit
+- [x] Check if keywords are present in the commit message
+- [x] Decode special characters
+- [x] Create the embed with the commit information
+- [x] Send message for Discord channel
 
-    [] Identifying the credentials.txt file
-    [] Define project and webhook information
-    [] Make the HTTP request to get the last commit information from the main branch
-    [] Extract relevant information from the commit
-    [] Check if keywords are present in the commit message
-    [] Decode special characters
-    [] Create the embed with the commit information
-    [] Send message for discord channel
+## Example:
+<div align=center>
+<img src="https://imgur.com/bQi4dmL.png" alt="IMG">
+</div>
 
-## Exemple:
 
-![Example](https://imgur.com/bQi4dmL)
 
 The script is triggered by a GitHub Action workflow on push events. It fetches commit information from the GitHub API, analyzes commit messages for specific keywords (such as `@doc` or similar), and sends relevant commit details as a Discord notification using a webhook.
 
