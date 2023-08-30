@@ -1,7 +1,7 @@
 # Webhook Discord Push Action
 
 <div align=center>
-<img src="https://imgur.com/IOtkCuf.png" width="250" height="150" alt="Imagem.">
+<img src="https://imgur.com/O3yvSKo.png" width="250" height="150" alt="Imagem.">
 </div>
 
 This project facilitates Discord notifications for commits containing the special tags like `@documentation` or `@doc` like in my case.
