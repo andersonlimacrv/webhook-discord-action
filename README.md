@@ -9,7 +9,7 @@ This project facilitates Discord notifications for commits containing the specia
 ## Setup
 
 1. Generate a Discord webhook URL in your server settings.
-2. Replace `credetials.txt` for the `sendDiscord.py` file with your variables.
+2. Replace `credentials.txt` for the `sendDiscord.py` file with your variables.
 
       ```bash
       url_discord=
